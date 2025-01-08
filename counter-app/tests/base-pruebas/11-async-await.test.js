@@ -8,4 +8,9 @@ describe('Pruebas en 11-sync-await', () => {
         expect(typeof url).toBe('string');
     })
   
+    // en caso de no encontrar la url
+    test('getImagen debe de retornar un error', async() => {
+        const url = await getImagen();
+        expect(url).toBe('No se encontro la imagen');
+    })
 })
