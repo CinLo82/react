@@ -6,7 +6,7 @@ export const GifApp = () => {
     const [categories, setCategories] = useState(['One Punch', 'Dragon Ball', 'Naruto'])
 
     const onAddCategory = ( newCategory ) => {
-        console.log(newCategory)
+        if ( categories.includes(newCategory) ) return;
         setCategories([newCategory, ...categories])
     }
 
@@ -22,12 +22,12 @@ export const GifApp = () => {
 
             <ol>
                 {
-                    categories.map( category => {
-                        return (
-                        <li key={category}>{category}
-                        </li>
+                    categories.map( (category) => (
+                            <div  key={category}>
+                                <li>{category}</li>
+                            </div>
                         )
-                    })
+                    )
                 }
             </ol>
         </>
